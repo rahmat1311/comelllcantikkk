@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selamat Ulang Tahun Comelll Cantikkuu Sayanggggg 🎉💝</title>
+
+<!-- Fonts & Libraries -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Dancing+Script&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body, html {
+  width:100%;
+  height:100%;
+  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+  background: radial-gradient(circle at top, #2b1055, #7597de);
+  color:#fff;
+  position:relative;
+}
+
+/* Stars */
+.stars {
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:url('https://i.ibb.co/Y2z8xgR/stars.png') repeat;
+  animation:twinkling 200s linear infinite;
+  z-index:0;
+}
+@keyframes twinkling {from{background-position:0 0;} to{background-position:-10000px 5000px;}}
+
+/* Intro */
+#intro {
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:rgba(0,0,0,0.5);
+  z-index:3;
+  text-align:center;
+  padding: 2vh 2vw;
+}
+#intro h1 {
+  font-size:calc(1.5rem + 2vw);
+  color:#ffb6c1;
+  animation:fadeIn 2s ease-in-out;
+  margin-bottom:1vh;
+}
+#intro p {
+  margin-top:1vh;
+  font-size:calc(1rem + 0.5vw);
+  animation:fadeIn 3s ease-in-out;
+  line-height:1.5;
+}
+#intro button {
+  margin-top:3vh;
+  padding:1em 2em;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg, #ff7eb3, #ff758c);
+  color:white;
+  font-size:1.2em;
+  cursor:pointer;
+  box-shadow:0 0 15px rgba(255,182,193,0.8);
+  transition:transform 0.3s ease;
+}
+#intro button:hover{transform:scale(1.1);}
+
+/* Gift Section */
+#giftSection {
+  display:none;
+  text-align:center;
+  position:relative;
+  z-index:4;
+  padding:2vh 2vw;
+}
+#giftSection img {
+  width:20vw;
+  max-width:150px;
+  cursor:pointer;
+}
+#ket{
+  margin-top:1vh;
+  font-size:1.1rem;
+}
+#halo{
+  margin-top:2vh;
+  font-family:'Dancing Script',cursive;
+  font-size:calc(1.2rem + 1vw);
+  color:#ffb6c1;
+}
+#kolombaru {
+  margin-top:1.5vh;
+}
+#kolombaru li {
+  display:inline-block;
+  margin:0.5vw;
+  font-size:calc(1.2rem + 0.5vw);
+  cursor:pointer;
+}
+blockquote#bq {
+  position:relative;
+  margin-top:2vh;
+  max-height:40vh;
+  overflow-y:auto;
+  padding:1vh 1vw;
+}
+blockquote#bq p {
+  margin-top:1vh;
+  display:none;
+  background: rgba(255,255,255,0.2);
+  padding:0.5em 1em;
+  border-radius:15px;
+  max-width:90%;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:calc(0.9rem + 0.3vw);
+  animation:popUp 0.5s ease forwards;
+}
+
+/* Slideshow Foto */
+#slideshow {
+  display:none;
+  position:absolute;
+  width:100%;
+  height:100%;
+  justify-content:center;
+  align-items:center;
+  z-index:2;
+}
+.photo {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:40vw;
+  max-width:300px;
+  height:40vw;
+  max-height:300px;
+  border-radius:20px;
+  background:center/cover no-repeat;
+  box-shadow:0 0 30px rgba(255,255,255,0.6);
+  border:5px solid #fff;
+}
+
+/* Love Animation */
+.love {
+  position:absolute;
+  width:5vw;
+  max-width:30px;
+  height:5vw;
+  max-height:30px;
+  background:url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
+  animation:floatLove 6s linear infinite;
+  opacity:0.8;
+}
+
+/* Fireworks */
+canvas#fireworks {
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  z-index:1;
+  pointer-events:none;
+}
+
+/* Animasi */
+@keyframes fadeZoom {0%,100%{opacity:0; transform:scale(0.9);} 10%,90%{opacity:1; transform:scale(1);} }
+@keyframes floatLove {0%{transform:translateY(0) scale(1); opacity:1;} 100%{transform:translateY(-80vh) scale(0.3); opacity:0;} }
+@keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
+@keyframes popUp {0%{opacity:0; transform:scale(0.5);} 100%{opacity:1; transform:scale(1);} }
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+<canvas id="fireworks"></canvas>
+
+<!-- Intro -->
+<div id="intro">
+  <h1>Selamat Ulang Tahun, Comelll Tersayang 💖</h1>
+  <p>Semoga kebahagiaan dan berkah selalu menyertaimu sayanggg, dan comelll tetap jadi cahaya kecil yang membuat abg selalu tersenyum setiap harinya. 🌻 💫</p>
+  <button id="startBtn">Mari Kita Menikah Sayanggggg 💌</button>
+</div>
+
+<!-- Audio -->
+<audio id="bgMusic" src="lagu.m4a" loop></audio>
+
+<!-- Stiker Tebak Lucu -->
+<img id="stiker1" src="https://feeldreams.github.io/pusn2.gif" hidden>
+<img id="stiker2" src="https://feeldreams.github.io/pandahiya.gif" hidden>
+<img id="stiker3" src="https://feeldreams.github.io/mikir.gif" hidden>
+<img id="stiker4" src="https://i.ibb.co/ypSqM83/images-9.jpg" hidden>
+<img id="stiker5" src="https://feeldreams.github.io/ngumpet.gif" hidden>
+
+<!-- Gift Section -->
+<div id="giftSection">
+  <img id="kadoIn" src="https://feeldreams.github.io/kadoin.png">
+  <p id="ket">Klik ❤️ sampai full!</p>
+  <p id="halo"></p>
+  <ul id="kolombaru">
+    <li id="lv1">🤍</li>
+    <li id="lv2">🤍</li>
+    <li id="lv3">🤍</li>
+    <li id="lv4">🤍</li>
+  </ul>
+  <blockquote id='bq'>
+    <p>Cieee ada yang ulang tahun 😆❤️</p>
+    <p>Happy Birthday 🎂✨</p>
+    <p>Semoga panjang umur dan bahagia selalu 🥳</p>
+    <p>Jangan lupa traktiran, yaa 😝❤️</p>
+    <p>Semoga setiap harinya sayangggg dipenuhi tawa dan keceriaan 😍🎉</p>
+    <p>Semoga kado dan doa manis datang terus bertubi-tubi sayanggg 🎁💖</p>
+    <p>Semoga semua mimpimu jadi nyata dan abg tetap ada disisi nya sayangggg 💫🌈</p>
+    <p>Hari ini spesial, jadi nikmati setiap momennya yahhh cintakuuuu 🎊🥰</p>
+    <p>Selamat ulang tahun, comelll yang paling cantikk kesayangannya abang💖🥳</p>
+  </blockquote>
+</div>
+
+<!-- Slideshow -->
+<div id="slideshow">
+  <div class="photo" id="photo"></div>
+</div>
+
+<script>
+const swalst = Swal.mixin({allowOutsideClick:false, confirmButtonColor:'#ff7eb3'});
+const music = document.getElementById('bgMusic');
+const hearts = ['lv1','lv2','lv3','lv4'];
+const photos = ['foto1.jpeg','foto2.jpeg','foto3.jpeg','foto4.jpeg','foto5.jpeg'];
+let current = 0;
+const photo = document.getElementById('photo');
+
+// Start Button
+document.getElementById('startBtn').addEventListener('click', async()=>{
+  document.getElementById('intro').style.display='none';
+  music.play();
+  triggerFireworks();
+  await tebakLucu();
+});
+
+// Tebak Lucu
+async function tebakLucu(){
+  const stiker = ['stiker1','stiker2','stiker3','stiker4','stiker5'];
+  await swalst.fire({title:'Alooo Kamuu...! iyaa kamu comelll kesayangann abang! 😋', imageUrl:document.getElementById(stiker[0]).src});
+  await swalst.fire({title:'Abang ada tebak-tebakan nih 💕', imageUrl:document.getElementById(stiker[1]).src});
+  await swalst.fire({title:'Sapi, sapi apa yang<br>ada di pantai? 🤔', imageUrl:document.getElementById(stiker[2]).src});
+  await swalst.fire({title:'Sapi beneran lah sayanggg... 😝', imageUrl:document.getElementById(stiker[3]).src, timer:2500});
+  await swalst.fire({title:'Ga lucu yahh? ❤️', imageUrl:document.getElementById(stiker[4]).src});
+  await swalst.fire({title:'Iyalah sayanggg, bagi abang yang lucu cuma <b style="color:pink;">Comelll cantikkkkuuu sayanggg 😝</b><br><br>Btw, siap nerima kejutan? 🎁'});
+  masukGift();
+}
+
+// Gift Section
+function masukGift(){
+  document.getElementById('giftSection').style.display='block';
+  new TypeIt("#halo",{speed:75}).type("Hai kamu yang paling spesial dan kesayangan abangg 💕").go();
+  animateBubbleChat();
+}
+
+// Bubble Chat Animation
+function animateBubbleChat(){
+  const ps = document.querySelectorAll('#bq p');
+  let i=0;
+  function showNext(){
+    if(i<ps.length){
+      ps[i].style.display='block';
+      ps[i].style.animation='popUp 0.5s forwards';
+      ps[i].scrollIntoView({behavior:'smooth', block:'end'});
+      i++;
+      setTimeout(showNext, 1500);
+    }
+  }
+  showNext();
+}
+
+// Klik hati
+hearts.forEach(id=>{
+  document.getElementById(id).addEventListener('click', ()=>{
+    document.getElementById(id).innerText='❤️';
+    if(hearts.every(i=>document.getElementById(i).innerText==='❤️')){
+      setTimeout(()=>{
+        Swal.fire({
+          title:"Kadonya muncul di hatimu ❤️❤️❤️",
+          text:"Klik OK dong sayanggggg 💫"
+        }).then(()=>masukSlideshow());
+      },500);
+    }
+  });
+});
+
+// Slideshow
+function masukSlideshow(){
+  document.getElementById('giftSection').style.display='none';
+  document.getElementById('slideshow').style.display='flex';
+  
+  current = 0;
+  photo.style.backgroundImage = `url('${photos[current]}')`;
+  current = (current+1)%photos.length;
+  showNextPhoto();
+  createLoves();
+  triggerFireworks();
+
+  setTimeout(()=>{
+    Swal.fire({
+      title: '💌 Mau kasih ucapan balik juga sayangg untuk abg?',
+      text: 'Klik "Ya" yahh sayanggg pleaseeee!!! 😝💕',
+      showCancelButton: true,
+      confirmButtonText: 'Ya... mau dongggg sayanggg 😍',
+      cancelButtonText: 'Nanti saja (heumm merajukkk abg😞)',
+      allowOutsideClick:false
+    }).then(result=>{
+      if(result.isConfirmed){
+        window.open('https://wa.me/+6285333273711?','_blank');
+      }
+    });
+  }, photos.length*6000 + 2000);
+}
+
+function showNextPhoto(){
+  photo.style.backgroundImage = `url('${photos[current]}')`;
+  current = (current+1)%photos.length;
+  setTimeout(showNextPhoto, 6000);
+}
+
+// Floating Hearts
+function createLoves(){
+  setInterval(()=>{
+    const love = document.createElement('div');
+    love.classList.add('love');
+    love.style.left = Math.random()*100+'vw';
+    love.style.animationDuration = (4+Math.random()*4)+'s';
+    document.body.appendChild(love);
+    setTimeout(()=>love.remove(),7000);
+  },500);
+}
+
+// Fireworks
+function triggerFireworks(){
+  const canvas = document.getElementById('fireworks');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  class Particle {
+    constructor(x,y,color){
+      this.x=x; this.y=y; this.color=color;
+      this.size=Math.random()*3+2;
+      this.speedX=(Math.random()-0.5)*5;
+      this.speedY=(Math.random()-0.5)*5;
+      this.alpha=1;
+    }
+    update(){ this.x+=this.speedX; this.y+=this.speedY; this.alpha-=0.02; }
+    draw(){ ctx.globalAlpha=this.alpha; ctx.fillStyle=this.color; ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fill(); ctx.globalAlpha=1; }
+  }
+
+  function randomColor(){ return `hsl(${Math.random()*360}, 100%, 60%)`; }
+  let particles=[];
+
+  function explode(x,y){ for(let i=0;i<30;i++){particles.push(new Particle(x,y,randomColor()));} }
+
+  function animate(){
+    ctx.fillStyle='rgba(0,0,0,0.1)';
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    particles.forEach((p,i)=>{
+      p.update(); p.draw();
+      if(p.alpha<=0) particles.splice(i,1);
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+  setInterval(()=>explode(Math.random()*canvas.width, Math.random()*canvas.height*0.5), 500);
+}
+</script>
+</body>
+</html>
